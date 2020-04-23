@@ -1,0 +1,54 @@
+
+input{
+    font-size: 20px;
+    position:absolute;
+}
+
+#reset{
+    display:none;
+}
+
+#head{
+    text-align:center;
+    font-family:Arial;
+    font-weight:bold;
+    font-size: 60px;
+    color:green;
+    text-shadow:4px 4px red;
+}
+p{
+    font-size: 30px;
+    font-family:Arial;
+    color:white;
+    text-shadow:2px 2px black;
+}
+#score{
+    font-size:25px;
+}
+
+body{
+    background-image:url(../images/moon.jpg);
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-color:#3399ff;
+}
+
+#zombie1, #zombie2, #boom1, #boom2{
+    width: 200px;
+    height: 200px;
+    position:absolute;
+    display:none;
+}
+
+#zombie3, #boom3{
+    width: 240px;
+    height: 240px;
+    position:absolute;
+    display:none;
+}
+#zombie4, #boom4{
+    width: 120px;
+    height: 120px;
+    position:absolute;
+    display:none;
+}
