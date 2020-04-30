@@ -132,4 +132,5 @@ function handler(id, s){
     }
 }
 
+
 document.body.onload = initialize;
