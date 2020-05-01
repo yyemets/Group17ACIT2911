@@ -67,8 +67,5 @@ describe('Test', function(){
       let result = myCode.letsRandomize();
       expect(result).to.be.a('number');
     });
-    
-    
   });
-
 })
