@@ -33,6 +33,15 @@ describe('Test', function(){
       expect(myCode.highscore).to.be.a('number');
     });
 
+    it('30 initial time value', function(){
+      var myCode = require('../proj.js');
+      expect(myCode.time).to.equal(30);
+    });
+    it('Number initial time type', function(){
+      var myCode = require('../proj.js');
+      expect(myCode.time).to.be.a('number');
+    });
+
     it('undefined Timer', function(){
       var myCode = require('../proj.js');
       expect(myCode.timer).to.be.undefined;
@@ -40,6 +49,10 @@ describe('Test', function(){
     it('undefined Timeout', function(){
       var myCode = require('../proj.js');
       expect(myCode.timer).to.be.undefined;
+    });
+    it('undefined GameTimer', function(){
+      var myCode = require('../proj.js');
+      expect(myCode.gameTimer).to.be.undefined;
     });
   });
 

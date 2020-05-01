@@ -172,6 +172,8 @@ exports.score = score;
 exports.highscore = highscore;
 exports.timer = timer;
 exports.timeout = timeout;
+exports.gameTimer = gameTimer;
+exports.time = time;
 
 exports.hideAll = hideAll;
 exports.initialize = initialize;
