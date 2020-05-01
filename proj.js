@@ -25,6 +25,23 @@ function zombiePlacer(){
     }
 }
 
+var time = 30;
+    var elem = document.getElementById('funky');
+
+    var timerId = setInterval(countdown, 1000);
+
+    function countdown() {
+      if (time == 0) {
+        time = 0
+        clearTimeout(timerId);
+        console.log('timer done')
+        elem.innerHTML = 'Time: ' + time;
+      } else {
+        elem.innerHTML = 'Time: ' + time;
+        time--;
+      }
+    }
+
 function zombieMove(id,s){
     let w = letsRandomize(0, (window.innerWidth - s));
     let h = letsRandomize(0, (window.innerHeight - s));
