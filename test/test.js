@@ -1,29 +1,53 @@
-var assert = require('assert');
+const expect = require('chai').expect;
 const jsdom = require('mocha-jsdom');
 
 global.document = jsdom({url: "http://localhost"});
 
 describe('Test', function(){    
   
-  describe('#value', function(){
-    it('should be zero initial count value', function(){
+  describe('# Initial Values', function(){
+    it('zero initial count value', function(){
       var myCode = require('../proj.js');
-      assert.equal(myCode.count, 0);
+      expect(myCode.count).to.equal(0);
     });
-    it('should be zero initial score value', function(){
+    it('Number initial count type', function(){
       var myCode = require('../proj.js');
-      assert.equal(myCode.score, 0);
+      expect(myCode.count).to.be.a('number');
     });
-    it('should be zero initial highscroe value', function(){
+
+    it('zero initial score value', function(){
       var myCode = require('../proj.js');
-      assert.equal(myCode.highscore, 0);
+      expect(myCode.score).to.equal(0);
     });
-  })
-  
-  describe('#check timer', function(){
-    it('should be ', function(){
+    it('Number initial score type', function(){
       var myCode = require('../proj.js');
+      expect(myCode.score).to.be.a('number');
+    });
+
+    it('zero initial highscroe value', function(){
+      var myCode = require('../proj.js');
+      expect(myCode.highscore).to.equal(0);
+    });
+    it('Number initial highscore type', function(){
+      var myCode = require('../proj.js');
+      expect(myCode.highscore).to.be.a('number');
+    });
+
+    it('undefined Timer', function(){
+      var myCode = require('../proj.js');
+      expect(myCode.timer).to.be.undefined;
+    });
+    it('undefined Timeout', function(){
+      var myCode = require('../proj.js');
+      expect(myCode.timer).to.be.undefined;
+    });
+  });
+
+  describe('# Check Functions', function(){
+    it('hideAll()', function(){
+      var myCode = require('../proj.js').hideAll();
       
-    })
-  })
+    });
+  });
+
 })
