@@ -168,15 +168,8 @@ function handler(id, s){
 
 document.body.onload = initialize;
 
-exports.count = count;
-exports.score = score;
-exports.highscore = highscore;
-exports.timer = timer;
-exports.timeout = timeout;
-exports.gameTimer = gameTimer;
-exports.time = time;
-exports.bgMusic = bgMusic;
+module.exports = { count, score, highscore, time, timer, 
+    timeout, gameTimer, bgMusic, letsRandomize}
 
-exports.letsRandomize = letsRandomize;
 
 
