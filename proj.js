@@ -28,8 +28,8 @@ function zombiePlacer(){
 function zombieMove(id,s){
     let w = letsRandomize(0, (window.innerWidth - s));
     let h = letsRandomize(0, (window.innerHeight - s));
-    document.getElementById('zombie' + id).style.top = h + 'px';
-    document.getElementById('zombie' + id).style.left = w + 'px';
+    document.getElementById('mole' + id).style.top = h + 'px';
+    document.getElementById('mole' + id).style.left = w + 'px';
     document.getElementById('boom' + id).style.top = h + 'px';
     document.getElementById('boom' + id).style.left = w + 'px';
 }
@@ -37,26 +37,26 @@ function zombieMove(id,s){
 function moveClicked(id, s){
     let w = letsRandomize(0, (window.innerWidth - s));
     let h = letsRandomize(0, (window.innerHeight - s));
-    document.getElementById('zombie' + id).style.top = h + 'px';
-    document.getElementById('zombie' + id).style.left = w + 'px';
+    document.getElementById('mole' + id).style.top = h + 'px';
+    document.getElementById('mole' + id).style.left = w + 'px';
     document.getElementById('boom' + id).style.display = "inline-block";
     timeout = setTimeout(showZ(id), 500);
 }
 
 function showZ(id){
     return function(){
-        document.getElementById('zombie' + id).style.display = "inline-block";
+        document.getElementById('mole' + id).style.display = "inline-block";
         document.getElementById('boom' + id).style.display = "none";
     }
 }
 
 function showZombie(id){
-    document.getElementById('zombie' + id).style.display = "inline-block";
+    document.getElementById('mole' + id).style.display = "inline-block";
     document.getElementById('boom' + id).style.display = "none";
 }
         
 function animate(id){
-    document.getElementById('zombie' + id).style.display = "none";
+    document.getElementById('mole' + id).style.display = "none";
     document.getElementById('boom' + id).style.display = "inline-block";
 }
         
@@ -72,12 +72,12 @@ function initialize(){
     document.getElementById('reset').style.left = sw - 40 + 'px';
     document.getElementById('score').innerHTML = "Score: " + score;
     document.getElementById('hscore').innerHTML = "High Score: " + highscore;
-    document.getElementById('head').innerHTML = "Zombie Whack-A-Mole";
+    document.getElementById('head').innerHTML = "Whack-A-Mole";
     document.getElementById('start').style.display = "inline-block";
-    document.getElementById('zombie1').onclick = handler(1, 200);
-    document.getElementById('zombie2').onclick = handler(2, 200);
-    document.getElementById('zombie3').onclick = handler(3, 240);
-    document.getElementById('zombie4').onclick = handler(4, 120);
+    document.getElementById('mole1').onclick = handler(1, 200);
+    document.getElementById('mole2').onclick = handler(2, 200);
+    document.getElementById('mole3').onclick = handler(3, 240);
+    document.getElementById('mole4').onclick = handler(4, 120);
     document.getElementById('reset').style.display = "none";
     document.getElementById('start').onclick = gameStart;
     document.getElementById('reset').onclick = reset;
@@ -90,10 +90,10 @@ function reset(){
 }
         
 function hideAll(){
-    document.getElementById('zombie1').style.display = "none";
-    document.getElementById('zombie2').style.display = "none";
-    document.getElementById('zombie3').style.display = "none";
-    document.getElementById('zombie4').style.display = "none";
+    document.getElementById('mole1').style.display = "none";
+    document.getElementById('mole2').style.display = "none";
+    document.getElementById('mole3').style.display = "none";
+    document.getElementById('mole4').style.display = "none";
     document.getElementById('boom1').style.display = "none";
     document.getElementById('boom2').style.display = "none";
     document.getElementById('boom3').style.display = "none";
