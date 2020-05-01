@@ -137,7 +137,10 @@ document.body.onload = initialize;
 exports.count = count;
 exports.score = score;
 exports.highscore = highscore;
+exports.timer = timer;
+exports.timeout = timeout;
 
 exports.hideAll = hideAll;
+exports.initialize = initialize;
 exports.startTimer = startTimer;
 exports.stopTimer = stopTimer;
