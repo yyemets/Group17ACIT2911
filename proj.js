@@ -5,7 +5,7 @@ let score = 0;
 let highscore = 0;
 let timer;
 let timeout;
-        
+
 function letsRandomize(min,max){
      return (Math.floor(Math.random() * max) + min);
 }
@@ -133,3 +133,11 @@ function handler(id, s){
 }
 
 document.body.onload = initialize;
+
+exports.count = count;
+exports.score = score;
+exports.highscore = highscore;
+
+exports.hideAll = hideAll;
+exports.startTimer = startTimer;
+exports.stopTimer = stopTimer;
