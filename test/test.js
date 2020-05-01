@@ -44,7 +44,7 @@ describe('Test', function(){
 
     it('Background Music bgMusic value', function(){
       var myCode = require('../proj.js');
-      expect(myCode.bgMusic).to.be.undefined;
+      expect(myCode.bgMusic).to.not.be.undefined;
     });
 
     it('undefined Timer', function(){
