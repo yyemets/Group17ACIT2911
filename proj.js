@@ -5,6 +5,8 @@ let score = 0;
 let highscore = 0;
 let timer;
 let timeout;
+let gameTimer;
+let time = 10;
         
 function letsRandomize(min,max){
      return (Math.floor(Math.random() * max) + min);
@@ -25,22 +27,18 @@ function zombiePlacer(){
     }
 }
 
-var time = 30;
-    var elem = document.getElementById('funky');
-
-    var timerId = setInterval(countdown, 1000);
-
-    function countdown() {
-      if (time == 0) {
-        time = 0
-        clearTimeout(timerId);
-        console.log('timer done')
+function countdown() {
+    let elem = document.getElementById('timer');
+    if (time == 1) {
+        reset();
+        console.log('timer done');
         elem.innerHTML = 'Time: ' + time;
-      } else {
-        elem.innerHTML = 'Time: ' + time;
+        
+    } else {
         time--;
-      }
-    }
+        elem.innerHTML = 'Time: ' + time;
+  }
+}
 
 function zombieMove(id,s){
     let w = letsRandomize(0, (window.innerWidth - s));
@@ -82,28 +80,27 @@ function initialize(){
     let sh = window.innerHeight/2;
     count = 0;
     score = 0;
+    time = 10;
     zombieMove(1,200);
     document.getElementById('start').style.top = sh - 40 + 'px';
     document.getElementById('start').style.left = sw - 40 + 'px';
-    document.getElementById('reset').style.top = window.innerHeight - 40 + 'px';
-    document.getElementById('reset').style.left = sw - 40 + 'px';
     document.getElementById('score').innerHTML = "Score: " + score;
     document.getElementById('hscore').innerHTML = "High Score: " + highscore;
+    document.getElementById('timer').innerHTML = "Time: " + time;
     document.getElementById('head').innerHTML = "Whack-A-Mole";
     document.getElementById('start').style.display = "inline-block";
     document.getElementById('mole1').onclick = handler(1, 200);
     document.getElementById('mole2').onclick = handler(2, 200);
     document.getElementById('mole3').onclick = handler(3, 240);
     document.getElementById('mole4').onclick = handler(4, 120);
-    document.getElementById('reset').style.display = "none";
     document.getElementById('start').onclick = gameStart;
-    document.getElementById('reset').onclick = reset;
     hideAll();
 }
 function reset(){
     initialize();
     stopTimer();
     clearTimeout(timeout);
+    clearInterval(gameTimer);
 }
         
 function hideAll(){
@@ -115,15 +112,14 @@ function hideAll(){
     document.getElementById('boom2').style.display = "none";
     document.getElementById('boom3').style.display = "none";
     document.getElementById('boom4').style.display = "none";
-    document.getElementById('reset').style.display = "none";
 }
         
 function gameStart(){
     document.getElementById('start').style.display = "none";
-    document.getElementById('reset').style.display = "inline-block";
     document.getElementById('head').innerHTML = "";
     zombieMove(1,200);
     startTimer();
+    gameTimer = setInterval(countdown, 1000);
     showZombie(1);
 }
 
