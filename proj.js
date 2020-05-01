@@ -1,4 +1,3 @@
-"use strict"
 
 let count = 0;
 let score = 0;
@@ -166,3 +165,12 @@ function handler(id, s){
 }
 
 document.body.onload = initialize;
+
+exports.count = count;
+exports.score = score;
+exports.highscore = highscore;
+
+exports.hideAll = hideAll;
+exports.startTimer = startTimer;
+exports.stopTimer = stopTimer;
+
