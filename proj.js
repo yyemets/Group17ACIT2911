@@ -1,4 +1,6 @@
 
+"use strict"
+
 let count = 0;
 let score = 0;
 let highscore = 0;
@@ -169,8 +171,12 @@ document.body.onload = initialize;
 exports.count = count;
 exports.score = score;
 exports.highscore = highscore;
+exports.timer = timer;
+exports.timeout = timeout;
+exports.gameTimer = gameTimer;
+exports.time = time;
 
 exports.hideAll = hideAll;
+exports.initialize = initialize;
 exports.startTimer = startTimer;
 exports.stopTimer = stopTimer;
-
