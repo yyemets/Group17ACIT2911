@@ -42,6 +42,11 @@ describe('Test', function(){
       expect(myCode.time).to.be.a('number');
     });
 
+    it('Background Music bgMusic value', function(){
+      var myCode = require('../proj.js');
+      expect(myCode.bgMusic).to.be.undefined;
+    });
+
     it('undefined Timer', function(){
       var myCode = require('../proj.js');
       expect(myCode.timer).to.be.undefined;
@@ -57,10 +62,13 @@ describe('Test', function(){
   });
 
   describe('# Check Functions', function(){
-    it('hideAll()', function(){
-      var myCode = require('../proj.js').hideAll();
-      
+    it('letsRandomize() should be a number', function () {
+      var myCode = require('../proj.js');
+      let result = myCode.letsRandomize();
+      expect(result).to.be.a('number');
     });
+    
+    
   });
 
 })
