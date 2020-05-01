@@ -175,8 +175,8 @@ exports.timer = timer;
 exports.timeout = timeout;
 exports.gameTimer = gameTimer;
 exports.time = time;
+exports.bgMusic = bgMusic;
 
-exports.hideAll = hideAll;
-exports.initialize = initialize;
-exports.startTimer = startTimer;
-exports.stopTimer = stopTimer;
+exports.letsRandomize = letsRandomize;
+
+
