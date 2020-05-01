@@ -6,10 +6,24 @@ let highscore = 0;
 let timer;
 let timeout;
 let gameTimer;
-let time = 10;
+let time = 30;
+let bgMusic = document.getElementById("bgmusic");
         
 function letsRandomize(min,max){
      return (Math.floor(Math.random() * max) + min);
+}
+
+function lowerVolume(){
+    bgMusic.volume = 0.2;
+}
+
+function bgPlay(){
+    bgMusic.play()
+}
+
+function bgStop(){
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
 }
 
 function zombiePlacer(){
@@ -80,10 +94,10 @@ function initialize(){
     let sh = window.innerHeight/2;
     count = 0;
     score = 0;
-    time = 10;
+    time = 30;
     zombieMove(1,200);
     document.getElementById('start').style.top = sh - 40 + 'px';
-    document.getElementById('start').style.left = sw - 40 + 'px';
+    document.getElementById('start').style.left = sw - 60 + 'px';
     document.getElementById('score').innerHTML = "Score: " + score;
     document.getElementById('hscore').innerHTML = "High Score: " + highscore;
     document.getElementById('timer').innerHTML = "Time: " + time;
@@ -101,6 +115,7 @@ function reset(){
     stopTimer();
     clearTimeout(timeout);
     clearInterval(gameTimer);
+    bgStop();
 }
         
 function hideAll(){
@@ -121,6 +136,7 @@ function gameStart(){
     startTimer();
     gameTimer = setInterval(countdown, 1000);
     showZombie(1);
+    bgPlay();
 }
 
 function startTimer(){
@@ -136,6 +152,10 @@ function handler(id, s){
         document.getElementById('effect' + id).play();
         score += 1;
         animate(id);
+        if (score % 2 == 0) {
+            time += 1;
+        }
+        document.getElementById('timer').innerHTML = 'Time: ' + time;
         moveClicked(id, s);
         document.getElementById('score').innerHTML = "Score: " + score;
         if (score > highscore){
