@@ -33,20 +33,20 @@ body{
     background-color:#3399ff;
 }
 
-#zombie1, #zombie2, #boom1, #boom2{
+#mole1, #mole2, #boom1, #boom2{
     width: 200px;
     height: 200px;
     position:absolute;
     display:none;
 }
 
-#zombie3, #boom3{
+#mole3, #boom3{
     width: 240px;
     height: 240px;
     position:absolute;
     display:none;
 }
-#zombie4, #boom4{
+#mole4, #boom4{
     width: 120px;
     height: 120px;
     position:absolute;
