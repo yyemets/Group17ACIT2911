@@ -17,11 +17,8 @@ p{
     font-family:Arial;
     color:white;
     text-shadow:2px 2px black;
-}
-#score, #hscore, #timer{
     font-size:36px;
     font-weight: bold;
-
 }
 
 input{
@@ -42,7 +39,7 @@ body{
     background-image:url(../images/background.jpeg);
     background-size: 100%;
     background-repeat:no-repeat;
-    background-color:#3399ff;
+    background-color:#4d3300;
 }
 
 #mole1, #mole2, #boom1, #boom2{
@@ -64,3 +61,5 @@ body{
     position:absolute;
     display:none;
 }
+
+
