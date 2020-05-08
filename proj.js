@@ -5,6 +5,7 @@ let score = 0;
 let highscore = 0;
 let scoreboard = [];
 let speed = 2000;
+
 //Movement Intervals
 let timer1;
 let timer2;
@@ -129,22 +130,20 @@ function countdown() {
     } else {
         time++;
         elem.innerHTML = 'Time: ' + time;
-        if (time % 10 == 0) {
-            speed -= 200;
-        }
-    } 
+    }
+
     
-    if(score >= 5 && !(two)) {
+    if((score >= 5 && !(two)) || (insane && !(two))) {
         two = true;
         showMole(2);
         timer2 = setTimeout(molePlacer2, speed);
     }
-    if(score == 10 && !(three)) {
-        tnree = true;
+    if((score == 10 && !(three)) || (insane && !(three))) {
+        three = true;
         showMole(3);
         timer3 = setTimeout(molePlacer3, speed);
     }
-    if(score == 20 && !(four)){
+    if((score == 20 && !(four)) || (insane && !(four))){
         four = true;
         showMole(4);
         timer4 = setTimeout(molePlacer4, speed);
@@ -280,26 +279,33 @@ function initialize(){
     four = false;
     moleMove(1,200);
     survival = false;
+    insane = false;
     document.getElementById('survival').style.backgroundColor = "#331a00";
     document.getElementById('survival').style.color = "white";
+    document.getElementById('insane').style.backgroundColor = "#331a00";
+    document.getElementById('insane').style.color = "white";
     document.getElementById('start').style.top = sh - 40 + 'px';
     document.getElementById('start').style.left = sw - 60 + 'px';
     document.getElementById('head').style.top = sh - 400 + 'px';
     document.getElementById('head').style.left = sw - 270 + 'px';
-    document.getElementById('survival').style.top = sh + 20 + 'px';
+    document.getElementById('survival').style.top = sh + 80 + 'px';
     document.getElementById('survival').style.left = sw - 73 + 'px';
+    document.getElementById('insane').style.top = sh + 20 + 'px';
+    document.getElementById('insane').style.left = sw - 65 + 'px';
     document.getElementById('score').innerHTML = "Score: " + score;
     document.getElementById('hscore').innerHTML = "High Score: " + highscore;
     document.getElementById('timer').innerHTML = "Time: " + time;
     document.getElementById('head').innerHTML = "Whack-A-Mole";
     document.getElementById('start').style.display = "inline-block";
     document.getElementById('survival').style.display = "inline-block";
+    document.getElementById('insane').style.display = "inline-block";
     document.getElementById('mole1').onclick = handler(1, 200);
     document.getElementById('mole2').onclick = handler(2, 200);
     document.getElementById('mole3').onclick = handler(3, 240);
     document.getElementById('mole4').onclick = handler(4, 120);
     document.getElementById('start').onclick = gameStart;
     document.getElementById('survival').onclick = survivalMode;
+    document.getElementById('insane').onclick = insaneMode;
     document.getElementById('lives').style.display = "none";
     
     hideAll();
@@ -337,6 +343,7 @@ function gameStart(){
         time = 30;
     }
     document.getElementById('survival').style.display = "none";
+    document.getElementById('insane').style.display = "none";
     document.getElementById('timer').innerHTML = "Time: " + time;
     document.getElementById('start').style.display = "none";
     document.getElementById('head').innerHTML = "";
@@ -355,12 +362,40 @@ function survivalMode() {
         document.getElementById('survival').style.backgroundColor = "white";
         document.getElementById('survival').style.color = "black";
         document.getElementById('lives').innerHTML = "Lives: " + lives;
+        if (insane == true) {
+            insane = false;
+            speed += 500;
+            document.getElementById('insane').style.backgroundColor = "#331a00";
+            document.getElementById('insane').style.color = "white";
+        }
     } else {
         survival = false;
         console.log('off');
         document.getElementById('survival').style.backgroundColor = "#331a00";
         document.getElementById('survival').style.color = "white";
         document.getElementById('lives').style.display = "none";
+    }
+    
+}
+
+function insaneMode() {
+    if (insane == false) {
+        insane = true;
+        speed -= 500;
+        document.getElementById('insane').style.backgroundColor = "white";
+        document.getElementById('insane').style.color = "black";
+        if (survival == true) {
+            survival = false;
+            console.log('off');
+            document.getElementById('survival').style.backgroundColor = "#331a00";
+            document.getElementById('survival').style.color = "white";
+            document.getElementById('lives').style.display = "none";
+        }
+    } else {
+        insane = false;
+        speed += 500;
+        document.getElementById('insane').style.backgroundColor = "#331a00";
+        document.getElementById('insane').style.color = "white";
     }
     
 }
@@ -382,6 +417,16 @@ function handler(id, s){
         document.getElementById('effect' + id).play();
         score += 1;
         animate(id);
+        if (insane || survival) {
+            if (score % 10 == 0) {
+                if ((speed - 100) > 200) {
+                    speed -= 100;
+                    console.log(speed)
+                } else {
+                    speed = 200;
+                }
+            }
+        }
         if (survival == false){
             if (score % 2 == 0) {
                 time += 1;
