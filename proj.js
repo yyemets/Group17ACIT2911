@@ -8,7 +8,7 @@ let timer;
 let timeout;
 let gameTimer;
 let time = 30;
-let bgMusic = document.getElementById("bgmusic");
+//let bgMusic = document.getElementById("bgmusic");
         
 function letsRandomize(min,max){
      return (Math.floor(Math.random() * max) + min);
@@ -166,10 +166,12 @@ function handler(id, s){
     }
 }
 
-document.body.onload = initialize;
+//document.body.onload = initialize;
+
+//module.exports = { count, score, highscore, time, timer, 
+//    timeout, gameTimer, bgMusic, letsRandomize }; 
 
 module.exports = { count, score, highscore, time, timer, 
-    timeout, gameTimer, bgMusic, letsRandomize}
-
+    timeout, gameTimer, letsRandomize };
 
 
