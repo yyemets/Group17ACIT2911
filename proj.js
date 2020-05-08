@@ -23,13 +23,12 @@ let four = false;
 
 let gameTimer;
 let time = 0;
-let bgMusic = document.getElementById("bgmusic");
 
 let survival = false;
 let insane = false;
 let lives = 10;
  
-
+let bgMusic = document.getElementById("bgmusic");
 // scoreboard.sort(function(a, b){return b - a});
 
 // Randomizer
@@ -458,3 +457,10 @@ function handler(id, s){
 }
 
 document.body.onload = initialize;
+
+module.exports = { count, score, highscore, speed, scoreboard, survival, insane, lives,
+    time, gameTimer, timer1, timer2, timer3, timer4, timeout1, timeout2, timeout3, timeout4, 
+    two, three, four,
+    letsRandomize };
+
+

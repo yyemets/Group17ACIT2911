@@ -1,9 +1,16 @@
 {
-    "scripts": {
-        "test": "mocha"
-    },
-    "devDependencies": {
-        "chai": "^4.2.0",
-        "mocha-jsdom": "^2.0.0"
-    }
+  "name": "group17acit2911",
+  "version": "1.0.0",
+  "description": "",
+  "main": "proj.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2",
+    "mocha-jsdom": "^2.0.0"
+  }
 }
