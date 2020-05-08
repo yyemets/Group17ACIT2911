@@ -461,6 +461,6 @@ document.body.onload = initialize;
 module.exports = { count, score, highscore, speed, scoreboard, survival, insane, lives,
     time, gameTimer, timer1, timer2, timer3, timer4, timeout1, timeout2, timeout3, timeout4, 
     two, three, four,
-    moleMove, reset, letsRandomize };
+    letsRandomize };
 
 
