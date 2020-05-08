@@ -99,16 +99,21 @@ function initialize(){
     zombieMove(1,200);
     document.getElementById('start').style.top = sh - 40 + 'px';
     document.getElementById('start').style.left = sw - 60 + 'px';
+    document.getElementById('insane').style.top = sh + 20 + 'px';
+    document.getElementById('insane').style.left = sw - 60 + 'px';
     document.getElementById('score').innerHTML = "Score: " + score;
     document.getElementById('hscore').innerHTML = "High Score: " + highscore;
     document.getElementById('timer').innerHTML = "Time: " + time;
     document.getElementById('head').innerHTML = "Whack-A-Mole";
+    document.getElementById("gameMode").innerHTML = "Game Mode";
     document.getElementById('start').style.display = "inline-block";
+    document.getElementById('insane').style.display = "inline-block";
     document.getElementById('mole1').onclick = handler(1, 200);
     document.getElementById('mole2').onclick = handler(2, 200);
     document.getElementById('mole3').onclick = handler(3, 240);
     document.getElementById('mole4').onclick = handler(4, 120);
     document.getElementById('start').onclick = gameStart;
+    // document.getElementById("insane").onclick = insaneMode;
     hideAll();
 }
 function reset(){
@@ -133,12 +138,25 @@ function hideAll(){
 function gameStart(){
     document.getElementById('start').style.display = "none";
     document.getElementById('head').innerHTML = "";
+    document.getElementById("gameMode").innerHTML = "";
     zombieMove(1,200);
     startTimer();
     gameTimer = setInterval(countdown, 1000);
     showZombie(1);
     bgPlay();
 }
+
+// function insaneMode{
+//     document.getElementById('start').style.display = "none";
+//     document.getElementById('head').innerHTML = "";
+//     document.getElementById("gameMode").innerHTML = "";
+//     zombieMove(1,200);
+//     startTimer();
+//     gameTimer = setInterval(countdown, 1000);
+//     showZombie(1);
+//     bgPlay();
+// }
+// If I add this part whole figure changes... 
 
 function startTimer(){
     timer = setInterval(zombiePlacer, 2000);
@@ -170,6 +188,4 @@ document.body.onload = initialize;
 
 module.exports = { count, score, highscore, time, timer, 
     timeout, gameTimer, bgMusic, letsRandomize}
-
-
 

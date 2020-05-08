@@ -1,4 +1,5 @@
 
+
 input{
     font-size: 20px;
     position:absolute;
@@ -24,6 +25,16 @@ p{
 
 }
 
+#gameMode{
+    text-align: center;
+    font-family:Arial;
+    font-weight:bold;
+    font-size: 60px;
+    color:red;
+    text-shadow:4px 4px black;
+    padding: 25px;
+}
+
 #start{
     padding:12px 28px;
     border-radius: 8px;
@@ -31,6 +42,19 @@ p{
     color:white;
     background-color:#331a00;
     font-family: Impact;
+}
+#insane{
+    padding:12px 28px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    color:white;
+    background-color:#331a00;
+    font-family: Impact;
+}
+
+#insane:hover{
+    background-color: white;
+    color: black;
 }
 
 #start:hover{
@@ -64,5 +88,4 @@ body{
     position:absolute;
     display:none;
 }
-
 
