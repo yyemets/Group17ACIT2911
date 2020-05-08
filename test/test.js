@@ -113,20 +113,87 @@ describe('Test', function(){
 
     it('molePlacer1-4()');
 
-    it('moveClicked1-4()');
+    it('moveClicked1-4()', function() {
+      var myCode = require('../proj.js');
+      let w = myCode.letsRandomize(0, (window.innerWidth - 200));
+      let h = myCode.letsRandomize(0, (window.innerHeight - 200));
+      boom1display = document.getElementById('boom1').style.display;
+      boom1display = "inline-block";
 
-    it('reset()' );
+      expect(boom1display).to.be.a('string');
+    });
 
-    it('showM1-4()' );
+    it('moleMove()', function(){
+      var myCode = require('../proj.js');
+      let w = myCode.letsRandomize(0, (window.innerWidth - 200));
+      let h = myCode.letsRandomize(0, (window.innerHeight - 200));
+      mole1top = document.getElementById('mole1').style.top;
+      mole1top = h +'px';
+      mole1left = document.getElementById('mole1').style.left;
+      mole1left = w +'px';
 
-    it('showMole()');
+      boom1top = document.getElementById('boom1').style.top;
+      boom1top = h +'px';
+      boom1left = document.getElementById('boom1').style.left;
+      boom1left = w +'px';
 
-    it('animate()');
+      expect(mole1top).to.be.a('string');
+      expect(mole1left).to.be.a('string');
+      expect(boom1top).to.be.a('string');
+      expect(boom1left).to.be.a('string');
+    } );
+
+    it('showM1-4()', function() {
+      var myCode = require('../proj.js');
+      let w = myCode.letsRandomize(0, (window.innerWidth - 200));
+      let h = myCode.letsRandomize(0, (window.innerHeight - 200));
+      mole1top = document.getElementById('mole1').style.top;
+      mole1top = h +'px';
+      mole1left = document.getElementById('mole1').style.left;
+      mole1left = w +'px';
+
+      boom1top = document.getElementById('boom1').style.top;
+      boom1top = h +'px';
+      boom1left = document.getElementById('boom1').style.left;
+      boom1left = w +'px';
+
+      expect(mole1top).to.be.a('string');
+      expect(mole1left).to.be.a('string');
+      expect(boom1top).to.be.a('string');
+      expect(boom1left).to.be.a('string');
+
+      boom1display = document.getElementById('boom1').style.display;
+      boom1display = "inline-block";
+
+      expect(boom1display).to.be.a('string');
+    } );
+
+    it('showMole()', function() {
+      mole1display = document.getElementById('mole1').style.display;
+      mole1display = "inline-block";
+      boom1display = document.getElementById('boom1').style.display;
+      boom1display = "none";
+
+      expect(mole1display).to.be.a('string');
+      expect(boom1display).to.be.a('string');
+    });
+
+    it('animate()', function() {
+      mole1display = document.getElementById('mole1').style.display;
+      mole1display = "none";
+      boom1display = document.getElementById('boom1').style.display;
+      boom1display = "inline-block";
+
+      expect(mole1display).to.be.a('string');
+      expect(boom1display).to.be.a('string');
+    });
 
     it('gameStart()');
 
     it('survivalMode()');
 
     it('insaneMode()');
+
+    it('handler()');
   });
 })
