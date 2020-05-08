@@ -5,12 +5,12 @@ input{
 }
 
 #head{
-    text-align:center;
     font-family:Arial;
     font-weight:bold;
     font-size: 80px;
     color:#b37700;
     text-shadow:4px 4px black;
+    position: absolute;
 }
 p{
     font-size: 30px;
@@ -24,7 +24,7 @@ p{
 
 }
 
-#start{
+input{
     padding:12px 28px;
     border-radius: 8px;
     transition-duration: 0.4s;
@@ -33,7 +33,7 @@ p{
     font-family: Impact;
 }
 
-#start:hover{
+input:hover{
     background-color: white;
     color:black;
 }
