@@ -1,17 +1,16 @@
 
-
 input{
     font-size: 20px;
     position:absolute;
 }
 
 #head{
-    text-align:center;
     font-family:Arial;
     font-weight:bold;
     font-size: 80px;
     color:#b37700;
     text-shadow:4px 4px black;
+    position: absolute;
 }
 p{
     font-size: 30px;
@@ -25,25 +24,7 @@ p{
 
 }
 
-#gameMode{
-    text-align: center;
-    font-family:Arial;
-    font-weight:bold;
-    font-size: 60px;
-    color:red;
-    text-shadow:4px 4px black;
-    padding: 25px;
-}
-
-#start{
-    padding:12px 28px;
-    border-radius: 8px;
-    transition-duration: 0.4s;
-    color:white;
-    background-color:#331a00;
-    font-family: Impact;
-}
-#insane{
+input{
     padding:12px 28px;
     border-radius: 8px;
     transition-duration: 0.4s;
@@ -52,12 +33,7 @@ p{
     font-family: Impact;
 }
 
-#insane:hover{
-    background-color: white;
-    color: black;
-}
-
-#start:hover{
+input:hover{
     background-color: white;
     color:black;
 }
@@ -88,4 +64,3 @@ body{
     position:absolute;
     display:none;
 }
-
