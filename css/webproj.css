@@ -1,3 +1,4 @@
+
 input{
     font-size: 20px;
     position:absolute;
@@ -16,11 +17,8 @@ p{
     font-family:Arial;
     color:white;
     text-shadow:2px 2px black;
-}
-#score, #hscore, #timer{
     font-size:36px;
     font-weight: bold;
-
 }
 
 input{
@@ -63,3 +61,5 @@ body{
     position:absolute;
     display:none;
 }
+
+
