@@ -16,6 +16,10 @@ let timeout2;
 let timeout3;
 let timeout4;
 
+let two = false;
+let three = false;
+let four = false;
+
 let gameTimer;
 let time = 0;
 let bgMusic = document.getElementById("bgmusic");
@@ -130,15 +134,18 @@ function countdown() {
         }
     } 
     
-    if(score == 5) {
+    if(score >= 5 && !(two)) {
+        two = true;
         showMole(2);
         timer2 = setTimeout(molePlacer2, speed);
     }
-    if(score == 10) {
+    if(score == 10 && !(three)) {
+        tnree = true;
         showMole(3);
         timer3 = setTimeout(molePlacer3, speed);
     }
-    if(score == 20){
+    if(score == 20 && !(four)){
+        four = true;
         showMole(4);
         timer4 = setTimeout(molePlacer4, speed);
     }
@@ -268,6 +275,9 @@ function initialize(){
     lives = 10;
     time = 0;
     speed = 2000;
+    two = false;
+    three = false;
+    four = false;
     moleMove(1,200);
     survival = false;
     document.getElementById('survival').style.backgroundColor = "#331a00";
