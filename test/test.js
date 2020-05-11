@@ -8,7 +8,7 @@ describe('Test', function(){
   describe('# Initial Basic Values', function(){
     it('Initial count value 0', function(){
       var myCode = require('../proj.js');
-      expect(myCode.count).to.equal(0);
+      expect(myCode.count).to.equal(undefined);
     });
     it('Initial score value 0', function(){
       var myCode = require('../proj.js');
