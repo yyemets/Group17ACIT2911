@@ -346,7 +346,7 @@ function initialize(){
     document.getElementById('insane').style.color = "white";
     document.getElementById('start').style.top = sh - 40 + 'px';
     document.getElementById('start').style.left = sw - 60 + 'px';
-    document.getElementById('head').style.top = sh - 400 + 'px';
+    document.getElementById('head').style.top = sh - 300 + 'px';
     document.getElementById('head').style.left = sw - 270 + 'px';
     document.getElementById('survival').style.top = sh + 80 + 'px';
     document.getElementById('survival').style.left = sw - 73 + 'px';
